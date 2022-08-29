@@ -11,7 +11,6 @@
 import SwiftUI
 import Combine
 
-@available(iOS 13, macOS 11, *)
 fileprivate struct AnimatedCheckmark: View {
     
     ///Checkmark color
@@ -46,7 +45,6 @@ fileprivate struct AnimatedCheckmark: View {
     }
 }
 
-@available(iOS 13, macOS 11, *)
 fileprivate struct AnimatedXmark: View {
     
     ///xmark color
@@ -88,7 +86,6 @@ fileprivate struct AnimatedXmark: View {
 
 //MARK: - Main View
 
-@available(iOS 13, macOS 11, *)
 public struct AlertToast: View{
     
     public enum BannerAnimation{
@@ -245,7 +242,7 @@ public struct AlertToast: View{
                         Image(name)
                             .foregroundColor(color)
                     case .loading:
-                        ActivityIndicator()
+                        ProgressView()
                     case .regular:
                         EmptyView()
                     }
@@ -292,7 +289,7 @@ public struct AlertToast: View{
                         .hudModifier()
                         .foregroundColor(color)
                 case .loading:
-                    ActivityIndicator()
+                    ProgressView()
                 case .regular:
                     EmptyView()
                 }
@@ -360,7 +357,7 @@ public struct AlertToast: View{
                     .padding(.bottom)
                 Spacer()
             case .loading:
-                ActivityIndicator()
+                ProgressView()
             case .regular:
                 EmptyView()
             }
@@ -400,7 +397,6 @@ public struct AlertToast: View{
     }
 }
 
-@available(iOS 13, macOS 11, *)
 public struct AlertToastModifier: ViewModifier{
     
     ///Presentation `Binding<Bool>`
@@ -597,7 +593,6 @@ public struct AlertToastModifier: ViewModifier{
 }
 
 ///Fileprivate View Modifier for dynamic frame when alert type is `.regular` / `.loading`
-@available(iOS 13, macOS 11, *)
 fileprivate struct WithFrameModifier: ViewModifier{
     
     var withFrame: Bool
@@ -617,7 +612,6 @@ fileprivate struct WithFrameModifier: ViewModifier{
 }
 
 ///Fileprivate View Modifier to change the alert background
-@available(iOS 13, macOS 11, *)
 fileprivate struct BackgroundModifier: ViewModifier{
     
     var color: Color?
@@ -635,7 +629,6 @@ fileprivate struct BackgroundModifier: ViewModifier{
 }
 
 ///Fileprivate View Modifier to change the text colors
-@available(iOS 13, macOS 11, *)
 fileprivate struct TextForegroundModifier: ViewModifier{
     
     var color: Color?
@@ -651,7 +644,6 @@ fileprivate struct TextForegroundModifier: ViewModifier{
     }
 }
 
-@available(iOS 13, macOS 11, *)
 fileprivate extension Image{
     
     func hudModifier() -> some View{

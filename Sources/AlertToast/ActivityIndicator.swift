@@ -8,7 +8,6 @@
 import SwiftUI
 
 #if os(macOS)
-@available(macOS 11, *)
 struct ActivityIndicator: NSViewRepresentable {
     
     func makeNSView(context: NSViewRepresentableContext<ActivityIndicator>) -> NSProgressIndicator {
@@ -25,7 +24,6 @@ struct ActivityIndicator: NSViewRepresentable {
     }
 }
 #else
-@available(iOS 13, *)
 struct ActivityIndicator: UIViewRepresentable {
 
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
